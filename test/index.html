@@ -8,11 +8,10 @@
 </head>
 <body>
     <div id="app">
-        变量a：{{a}}
-        <div>
-            变量b.b：{{b.b}}
-        </div> 
+        <p>变量a：{{a}}</p> 
+        <div>变量b.b：{{b.b}}</div> 
         <input type="text" v-model="a">
+        <div>{{hello}}</div>
     </div>
 
     <!-- <script src="../node_modules/vue/dist/vue.js"></script> -->
@@ -24,6 +23,11 @@
                 a: 1,
                 b: {
                     b: 2
+                }
+            },
+            computed: {
+                hello() {
+                    return this.a + '' + this.b.b;
                 }
             }
         })
